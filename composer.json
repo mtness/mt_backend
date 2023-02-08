@@ -1,0 +1,27 @@
+{
+	"name": "markustimtner/mt-backend",
+	"type": "typo3-cms-extension",
+	"description": "Versatile extension",
+	"authors": [
+		{
+			"name": "Markus Timtner",
+			"role": "Machine Whisperer"
+		}
+	],
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"require": {
+		"typo3/cms-backend": "^8.7.13 || ^9 || ^10 || ^11"
+	},
+	"autoload": {
+		"psr-4": {
+			"MarkusTimtner\\MtBackend\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "mt_backend"
+		}
+	}
+}

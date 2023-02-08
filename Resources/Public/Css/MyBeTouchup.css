@@ -1,0 +1,313 @@
+#mtness{}
+
+/* filereference metadata  */
+.formengine-field-item-description {
+	display: none;
+}
+
+.t3-page-column-header {
+	padding: 20px 20px 5px 20px;
+}
+.t3-page-ce {
+	margin: 18px;
+}
+.t3-page-ce .t3-page-ce-body {
+	margin-bottom: 18px;
+}
+.t3js-page-new-ce {
+	margin-bottom: 12px;
+}
+
+/* mt-pageheader */
+
+h2.t3js-subtitle-inlineedit {
+	margin-top: 0;
+	margin-bottom: 24px;
+}
+
+.mt-pageheader {
+	position: relative;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 2px;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,.333);
+	margin: 1.5em -1px;
+}
+.mt-pageheader-content {
+	position: relative;
+	padding: 1.25em 20px;
+	display: flex;
+	flex-flow: row;
+	gap: 2em;
+}
+.mt-pageheader h3 {
+	margin: 0 0 .25em;
+	font-size: 1em;
+	font-weight: 700;
+}
+.mt-pageheader h3 + p {
+	position: relative;
+	margin: 0;
+}
+
+.mt-pageheader-content-section {
+	flex-grow: 1;
+}
+
+.mt-pageheader-content-section.seo {
+	display: flex;
+	flex-flow: column;
+	gap: .75em;
+	flex-grow: 6;
+}
+
+.mt-pageheader-content-section.resources {
+	min-width: 150px;
+	max-width: 300px;
+}
+
+.mt-pageheader-content-section.resources .imgs {
+	position: relative;
+	left: -10px;
+}
+
+.mt-pageheader-content-section.resources img {
+	margin: 0 0 10px 10px;
+	width: 100%;
+	height: auto;
+}
+
+.mt-pageheader .categories h3 {
+	margin-bottom: 6px;
+}
+
+.mt-pageheader-list-inline {
+	padding-left: 0;
+}
+.mt-pageheader-list-inline li {
+	display: inline;
+}
+
+.t3-page-column {
+	box-shadow: 0 0 1px 0 rgba(0,0,0,.222);
+}
+
+
+
+/* save buttons in one line, again // now ext:save_close_ce */
+
+/* https://github.com/MichaelNussbaumerGOWEST/backend_save_buttons/blob/master/Resources/Public/css/backend/gowest-backend.css */
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton {
+	border: 1px solid #bbbbbb;
+
+	border-radius: 2px;
+	-o-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button.dropdown-toggle {
+	display: none;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu {
+	display: block;
+	position: relative;
+	top: auto;
+	left: auto;
+	background: none;
+	border: 0;
+	box-shadow: none;
+	-o-box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+
+	padding: 0;
+	margin: 0;
+
+	min-width: 0;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li {
+	float: left;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button,
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a {
+	text-indent: -999em;
+	position: relative;
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 24px;
+	height: 24px;
+	min-height: 24px;
+	border: 0;
+
+	border-left: 1px solid #bbbbbb;
+	color: #000;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button {
+	border-left: 0;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button:hover,
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a:hover {
+	background: #d5d5d5;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button:focus,
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a:focus {
+	outline: 0;
+}
+
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button > span.icon,
+.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a > span.icon {
+	text-indent: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+
+	transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+
+}
+
+.dropdown-menu h3.dropdown-headline {}
+.dropdown-menu h3.dropdown-headline + hr { margin: 0.75em -15px; }
+
+/* hide clear cache explanation */
+.dropdown-table-column.dropdown-table-column-top.dropdown-table-text .text-muted { display: none; }
+
+/* v9 misc backend enhancements */
+
+.modal-open .modal {
+	background-color: rgba(0,0,0,0.75);
+}
+
+code {
+	color: #080;
+}
+
+/* better backend form styling by mtness */
+
+h1 { margin-bottom: 10px; }
+
+.form-section { padding: 6px 12px 2px; }
+
+.form-section-headline { margin-bottom: 4px; }
+
+.form-group { margin-bottom: 2px; }
+
+.form-group .t3js-formengine-field-item { margin-bottom: 16px; }
+
+
+.form-group.t3js-formengine-validation-marker.t3js-formengine-palette-field label.t3js-formengine-label { margin-bottom: 2px; }
+
+
+.form-control-wrap { margin: 1px 0; }
+
+
+
+
+/* misc backend style touchup */
+
+body,
+body .module {
+	background-color: #eee;
+}
+
+.typo3-login {
+	background-color: #666 !important;
+}
+
+#typo3-contentContainerWrapper {
+	background-color: #666 !important;
+}
+
+.typo3-topbar-site-name {
+	font-size: 10px;
+}
+
+.cke_inner.cke_reset.cke_maximized {
+	margin-top: 0 !important;
+}
+
+/* v8 gridelements enhancements */
+
+.t3-grid-container.t3-grid-element-container table.t3-page-columns,
+.t3-grid-container table.t3js-page-columns {
+	border-spacing: 0 !important;
+}
+
+.t3js-module-body .t3-grid-container-1,
+.t3js-module-body .t3-grid-container-2,
+.t3js-module-body .t3-grid-container-3,
+.t3js-module-body .t3-grid-container-4,
+.t3js-module-body .t3-grid-container-5 {
+	margin: -10px !important;
+	border-width: 3px 2px 2px 2px;
+}
+
+.t3-page-ce .t3-page-ce-footer {
+	padding: 0;
+}
+.t3-page-ce .t3-page-ce-footer .t3-page-ce-info {
+	margin: 0 10px;
+	line-height: 1.8;
+}
+
+.t3js-module-body .t3-grid-container-4 {
+	border-style: solid;
+	border-color: #63a91f;
+	margin: 2px 0 0 0;
+}
+
+.t3js-module-body .t3-grid-container-title-4 {
+	font-size: 12px;
+	font-weight: normal;
+	color: #1a512e;
+	background: #c6dc93;
+	padding: 5px 10px;
+	margin: 0;
+}
+
+.t3js-module-body .t3-grid-container-5 {
+	border-style: solid;
+	border-color: #fafa0f;
+	margin: 2px 0 0 0;
+}
+
+.t3js-module-body .t3-grid-container-title-5 {
+	font-size: 12px;
+	font-weight: normal;
+	color: #1a512e;
+	background: #fdfd96;
+	padding: 5px 10px;
+	margin: 0;
+}
+
+
+.t3-ctype-identifier[data-ctype="gridelements_pi1"] {
+	position: absolute;
+	top: 41px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 23;
+	padding-left: 0;
+
+}
+
+/* ext:container styling */
+.t3-page-ce .t3-grid-container table.t3js-page-columns {
+	border-spacing: 0 !important;
+}
+
+table.t3js-page-columns .t3-page-column-header {
+	padding-top: 10px;
+}
