@@ -11,13 +11,13 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-  'title' => 'MT Backend Touchup',
-  'description' => 'the mtness touchup for the TYPO3 Backend, css and other.',
+  'title' => 'BE MTNESS.',
+  'description' => 'the mtness touchup for TYPO3 Backend, css and other.',
   'category' => 'be',
   'author' => 'Markus Timtner',
   'author_email' => 'me@mtness.net',
   'author_company' => '',
-  'version' => '11.1.0',
+  'version' => '10.1.0',
   'state' => 'stable',
   'uploadfolder' => false,
   'createDirs' => '',

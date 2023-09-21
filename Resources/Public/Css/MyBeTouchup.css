@@ -29,40 +29,28 @@ h2.t3js-subtitle-inlineedit {
 	position: relative;
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 2px;
-	box-shadow: 0 0 1px 0 rgba(0,0,0,.333);
-	margin: 1.5em -1px;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,.33);
+	margin: 1em -1px 2em;
+	border-top: 1px solid #cdcdcd;
 }
 .mt-pageheader-content {
 	position: relative;
-	padding: 1.25em 20px;
-	display: flex;
-	flex-flow: row;
-	gap: 2em;
+	padding: 10px 20px;
 }
 .mt-pageheader h3 {
-	margin: 0 0 .25em;
+	margin-top: 0;
 	font-size: 1em;
 	font-weight: 700;
 }
 .mt-pageheader h3 + p {
 	position: relative;
+	top: -8px;
 	margin: 0;
 }
 
+
 .mt-pageheader-content-section {
-	flex-grow: 1;
-}
-
-.mt-pageheader-content-section.seo {
-	display: flex;
-	flex-flow: column;
-	gap: .75em;
-	flex-grow: 6;
-}
-
-.mt-pageheader-content-section.resources {
-	min-width: 150px;
-	max-width: 300px;
+	margin: 10px 0;
 }
 
 .mt-pageheader-content-section.resources .imgs {
@@ -72,8 +60,6 @@ h2.t3js-subtitle-inlineedit {
 
 .mt-pageheader-content-section.resources img {
 	margin: 0 0 10px 10px;
-	width: 100%;
-	height: auto;
 }
 
 .mt-pageheader .categories h3 {
@@ -86,12 +72,6 @@ h2.t3js-subtitle-inlineedit {
 .mt-pageheader-list-inline li {
 	display: inline;
 }
-
-.t3-page-column {
-	box-shadow: 0 0 1px 0 rgba(0,0,0,.222);
-}
-
-
 
 /* save buttons in one line, again // now ext:save_close_ce */
 
@@ -211,9 +191,6 @@ h1 { margin-bottom: 10px; }
 
 .form-control-wrap { margin: 1px 0; }
 
-
-
-
 /* misc backend style touchup */
 
 body,
@@ -239,8 +216,7 @@ body .module {
 
 /* v8 gridelements enhancements */
 
-.t3-grid-container.t3-grid-element-container table.t3-page-columns,
-.t3-grid-container table.t3js-page-columns {
+.t3-grid-container.t3-grid-element-container table.t3-page-columns {
 	border-spacing: 0 !important;
 }
 
@@ -303,11 +279,9 @@ body .module {
 
 }
 
-/* ext:container styling */
-.t3-page-ce .t3-grid-container table.t3js-page-columns {
-	border-spacing: 0 !important;
-}
 
-table.t3js-page-columns .t3-page-column-header {
-	padding-top: 10px;
+/* hide mask sponsor-card-container */
+
+.sponsor-card-container {
+	display: none;
 }

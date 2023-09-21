@@ -18,7 +18,6 @@ class PageHook
 		//load partial paths info from typoscript
 		$this->view = GeneralUtility::makeInstance(StandaloneView::class);
 		$this->view->setFormat('html');
-
 		$resourcesPath = 'EXT:mt_backend/Resources/';
 		$this->view->setTemplatePathAndFilename($resourcesPath . 'Private/Templates/PageHook.html');
 
@@ -26,9 +25,7 @@ class PageHook
 		if($pageinfo['media']) {
 			$fileRepository = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\FileRepository::class);
 			$fileObjects = $fileRepository->findByRelation('pages', 'media', $pageinfo['uid']);
-
 			$this->view->assign('files', $fileObjects);
-
 		}
 
 		if ($pageinfo['categories']) {
@@ -45,13 +42,11 @@ class PageHook
 					$queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->quote('categories'))
 				)
 			);
-			$categoryObjects = $query->execute()->fetchAllAssociative();
-
+			$categoryObjects = $query->execute()->fetchAll();
 			$this->view->assign('categories', $categoryObjects);
 		}
 
 		$this->view->assign('page', $parentObject->pageinfo);
-
 		return $this->view->render();
 	}
 }
