@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3') || die('Access denied.');
 
 // Custom CSS include
 $GLOBALS['TBE_STYLES']['skins']['mt_backend'] = [

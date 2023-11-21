@@ -11,19 +11,19 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-  'title' => 'BE MTNESS.',
-  'description' => 'the mtness touchup for TYPO3 Backend, css and other.',
+  'title' => 'MT BACKEND.',
+  'description' => 'This TYPO3 Extension provides a preview of page properties in the page module, and a some css touchup.',
   'category' => 'be',
   'author' => 'Markus Timtner',
   'author_email' => 'me@mtness.net',
   'author_company' => '',
-  'version' => '1.0.0',
+  'version' => '1.0.1',
   'state' => 'stable',
   'uploadfolder' => false,
   'createDirs' => '',
   'constraints' => [
     'depends' => [
-      'typo3' => '8.7.0-11.9.99',
+      'typo3' => '10.0.0-12.9.99',
 	],
     'conflicts' => [],
     'suggests' => [],
