@@ -1,2 +1,3 @@
 # Ignore release files
 /*.zip
+/.idea/
