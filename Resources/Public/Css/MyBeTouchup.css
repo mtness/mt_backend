@@ -214,6 +214,17 @@ body .module {
 	margin-top: 0 !important;
 }
 
+
+
+.module-docheader-bar-column-left .row-cols-auto.row {
+	flex-flow: row-reverse;
+	justify-content: left;
+}
+
+
+
+
+
 /* v8 gridelements enhancements */
 
 .t3-grid-container.t3-grid-element-container table.t3-page-columns {
