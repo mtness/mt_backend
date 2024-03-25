@@ -216,7 +216,9 @@ body .module {
 
 
 
-.module-docheader-bar-column-left .row-cols-auto.row {
+
+/* reset of order of module docheader */
+.module-docheader-bar-navigation .module-docheader-bar-column-left .row-cols-auto.row {
 	flex-flow: row-reverse;
 	justify-content: left;
 }
