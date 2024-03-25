@@ -225,7 +225,7 @@ body .module {
 .t3js-module-body .t3-grid-container-3,
 .t3js-module-body .t3-grid-container-4,
 .t3js-module-body .t3-grid-container-5 {
-	margin: -10px !important;
+	margin: 0 -10px -10px !important;
 	border-width: 3px 2px 2px 2px;
 }
 
@@ -268,15 +268,28 @@ body .module {
 }
 
 
+
+
 .t3-ctype-identifier[data-ctype="gridelements_pi1"] {
-	position: absolute;
-	top: 41px;
-	left: 0;
-	right: 0;
-	text-align: center;
 	z-index: 23;
 	padding-left: 0;
 
+}
+
+.t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > div > div > .exampleContent > strong,
+.t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > div > div > span > .exampleContent > strong {
+	position: absolute;
+	top: 10px;
+	left: 60px;
+}
+
+.t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > div > div > .exampleContent > strong + br,
+.t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > div > div > span > .exampleContent > strong + br {
+	display: none;
+}
+
+.t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > .t3-page-ce-body-inner {
+	padding-top: 0;
 }
 
 
