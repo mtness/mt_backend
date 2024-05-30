@@ -1,52 +1,67 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarkusTimtner\MtBackend\Hooks;
 
+use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 use TYPO3\CMS\Backend\Controller\PageLayoutController;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Resource\FileRepository;
+use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
 class PageHook
 {
-	/**
-	 * @var StandaloneView
-	 */
-	protected $view;
+	public function __invoke(ModifyPageLayoutContentEvent $event): void
+	{
+		$event->addHeaderContent($this->renderStuff((int)($event->getRequest()->getQueryParams()['id'] ?? 0)));
+	}
 
 	public function render(array $params, PageLayoutController $parentObject)
 	{
-		//load partial paths info from typoscript
-		$this->view = GeneralUtility::makeInstance(StandaloneView::class);
-		$this->view->setFormat('html');
-		$resourcesPath = 'EXT:mt_backend/Resources/';
-		$this->view->setTemplatePathAndFilename($resourcesPath . 'Private/Templates/PageHook.html');
+		return $this->renderStuff((int)$parentObject->pageinfo['uid']);
+	}
 
-		$pageinfo = $parentObject->pageinfo;
-		if($pageinfo['media']) {
-			$fileRepository = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\FileRepository::class);
+	protected function renderStuff(int $id)
+	{
+
+		$pageinfo = BackendUtility::readPageAccess($id, $GLOBALS['BE_USER']->getPagePermsClause(Permission::PAGE_SHOW));
+
+		//load partial paths info from typoscript
+		$view = GeneralUtility::makeInstance(StandaloneView::class);
+		$view->setFormat('html');
+		$resourcesPath = 'EXT:mt_backend/Resources/';
+		$view->setTemplatePathAndFilename($resourcesPath . 'Private/Templates/PageHook.html');
+
+		if ($pageinfo['media']) {
+			$fileRepository = GeneralUtility::makeInstance(FileRepository::class);
 			$fileObjects = $fileRepository->findByRelation('pages', 'media', $pageinfo['uid']);
-			$this->view->assign('files', $fileObjects);
+			$view->assign('files', $fileObjects);
 		}
 
 		if ($pageinfo['categories']) {
-			$queryBuilder = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable('sys_category');
+			$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
 			$query = $queryBuilder->select('sys_category.uid', 'sys_category.title')->from('sys_category');
 			$query->join(
 				'sys_category',
 				'sys_category_record_mm',
 				'mm',
-				$queryBuilder->expr()->andX(
+				(string)$queryBuilder->expr()->and(
 					$queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->quoteIdentifier('sys_category.uid')),
 					$queryBuilder->expr()->in('mm.uid_foreign', $pageinfo['uid']),
 					$queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->quote('pages')),
 					$queryBuilder->expr()->eq('mm.fieldname', $queryBuilder->quote('categories'))
 				)
 			);
-			$categoryObjects = $query->execute()->fetchAll();
-			$this->view->assign('categories', $categoryObjects);
+			$categoryObjects = $query->executeQuery()->fetchAllAssociative();
+			$view->assign('categories', $categoryObjects);
 		}
 
-		$this->view->assign('page', $parentObject->pageinfo);
-		return $this->view->render();
+		$view->assign('page', $pageinfo);
+		return $view->render();
 	}
 }
+
