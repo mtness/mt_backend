@@ -6,18 +6,18 @@ use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
+ * 2024-07-18 by Markus Timtner
  *
- * @version $Id$
- * @copyright Dimitri Lavrenuek <lavrenuek.de>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ * Get categories of page
+ * only applicable in backend context
+ *
+ * Example usage
+ * <m:getpagecategories uid="{page.uid}" />
+ *
  */
+
 class GetpagecategoriesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
-	use CompileWithRenderStatic;
-
-	/**
-	 * Initialize arguments
-	 */
 	public function initializeArguments()
 	{
 		parent::initializeArguments();
