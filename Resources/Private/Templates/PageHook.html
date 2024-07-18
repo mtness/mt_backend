@@ -1,3 +1,9 @@
+<html
+		data-namespace-typo3-fluid="true"
+		xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+		xmlns:m="http://typo3.org/ns/MarkusTimtner/MtBackend/ViewHelpers"
+		>
+
 <f:comment>
 	<f:translate key="pagelayout.section.categories" extensionName="blog" />
 	<f:debug>{page}</f:debug>
@@ -57,11 +63,16 @@
 							<h3>Categories</h3>
 							<div class="mt-pageheader-section categories">
 								<ul class="mt-pageheader-list-inline">
-									<f:for each="{page.categories}" as="category">
-										<li><span class="label label-info">{category.title}</span></li>
-									</f:for>
+									<f:format.raw><m:getpagecategories uid="{page.uid}" /></f:format.raw>
 								</ul>
 							</div>
+						</div>
+					</f:if>
+
+					<f:if condition="{page.slug}">
+						<div class="mt-pageheader-content-section slug">
+							<h3>Page Url</h3>
+							<pre>{page.slug}</pre>
 						</div>
 					</f:if>
 
@@ -74,3 +85,5 @@
 	</f:if>
 
 </f:if>
+
+</html>

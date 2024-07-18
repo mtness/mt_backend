@@ -66,6 +66,21 @@ h2.t3js-subtitle-inlineedit {
 	margin-bottom: 6px;
 }
 
+.mt-pageheader .categories ul {
+	display: flex;
+	gap: .5rem;
+}
+.mt-pageheader .categories li {
+	font-size: .7rem;
+	background: #ddd;
+	padding: .25rem .5rem;
+	border-radius: 3px;
+}
+
+.mt-pageheader .slug pre {
+	font-size: .95rem;
+}
+
 .mt-pageheader-list-inline {
 	padding-left: 0;
 }
