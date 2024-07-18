@@ -45,4 +45,4 @@ and a some css touchup:
 In the hope you may find it useful,
 Feedback is always welcome please use the repository issues for that.
 
-A big thank you to Markus Klein especially for helping me with so many little things I stopped counting^^)  
+A big thank you to Markus Klein especially for helping me with so many little things I stopped counting^^)
