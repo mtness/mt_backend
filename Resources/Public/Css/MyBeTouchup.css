@@ -34,7 +34,7 @@ h2.t3js-subtitle-inlineedit {
 }
 .mt-pageheader-content {
 	position: relative;
-	padding: 8px 20px;
+	padding: .2rem 1rem;
 	display: flex;
 	flex-flow: column;
 	gap: .5rem;
