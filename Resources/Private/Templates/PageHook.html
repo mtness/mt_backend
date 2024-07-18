@@ -19,87 +19,80 @@
 
 <f:if condition="{page}">
 
-	<f:if condition="{files} || {page.description} || {page.abstract} || {page.categories}">
-		<f:then>
-
-			<div class="mt-pageheader">
-				<div class="mt-pageheader-content">
-					<f:if condition="{page.slug}">
-						<div class="mt-pageheader-content-section slug">
-							<b>Url:</b> <pre>{page.slug}</pre>
-						</div>
-					</f:if>
-					<f:if condition="{files}">
-						<f:then>
-							<div class="mt-pageheader-content-section resources">
-								<b>Resources:</b>
-								<div class="imgs">
-									<f:for each="{files}" as="file">
-										<f:image image="{file}" maxHeight="40" />
-									</f:for>
-								</div>
-							</div>
-						</f:then>
-					</f:if>
-
-					<f:if condition="{page.categories}">
-						<div class="mt-pageheader-content-section categories">
-							<b>Categories:</b>
-							<div class="mt-pageheader-section categories">
-								<ul class="mt-pageheader-list-inline">
-									<f:format.raw><m:getpagecategories uid="{page.uid}" /></f:format.raw>
-								</ul>
-							</div>
-						</div>
-					</f:if>
-
-					<f:if condition="{page.seo_title}">
-						<f:then>
-							<div class="mt-pageheader-content-section description">
-								<h3>SEO Title:</h3>
-								<p>{page.seo_title}</p>
-							</div>
-						</f:then>
-						<f:else>
-						</f:else>
-					</f:if>
-
-					<f:if condition="{page.description}">
-						<f:then>
-							<div class="mt-pageheader-content-section description">
-								<h3>Description:</h3>
-								<p>{page.description}</p>
-							</div>
-						</f:then>
-						<f:else>
-						</f:else>
-					</f:if>
-
-					<f:if condition="{page.abstract}">
-						<f:then>
-							<div class="mt-pageheader-content-section abstract">
-								<h3>Abstract:</h3>
-								<p>{page.abstract}</p>
-							</div>
-						</f:then>
-					</f:if>
-
-					<f:if condition="{page.keywords}">
-						<f:then>
-							<div class="mt-pageheader-content-section abstract">
-								<h3>Keywords:</h3>
-								<p>{page.keywords}</p>
-							</div>
-						</f:then>
-					</f:if>
-
+	<div class="mt-pageheader">
+		<div class="mt-pageheader-content">
+			<f:if condition="{page.slug}">
+				<div class="mt-pageheader-content-section slug">
+					<b>Url:</b> <pre>{page.slug}</pre>
 				</div>
+			</f:if>
+			<f:if condition="{files}">
+				<f:then>
+					<div class="mt-pageheader-content-section resources">
+						<b>Resources:</b>
+						<div class="imgs">
+							<f:for each="{files}" as="file">
+								<f:image image="{file}" maxHeight="40" />
+							</f:for>
+						</div>
+					</div>
+				</f:then>
+			</f:if>
 
-			</div>
+			<f:if condition="{page.categories}">
+				<div class="mt-pageheader-content-section categories">
+					<b>Categories:</b>
+					<div class="mt-pageheader-section categories">
+						<ul class="mt-pageheader-list-inline">
+							<f:format.raw><m:getpagecategories uid="{page.uid}" /></f:format.raw>
+						</ul>
+					</div>
+				</div>
+			</f:if>
 
+			<f:if condition="{page.seo_title}">
+				<f:then>
+					<div class="mt-pageheader-content-section description">
+						<h3>SEO Title:</h3>
+						<p>{page.seo_title}</p>
+					</div>
+				</f:then>
+				<f:else>
+				</f:else>
+			</f:if>
 
-		</f:then>
-	</f:if>
+			<f:if condition="{page.description}">
+				<f:then>
+					<div class="mt-pageheader-content-section description">
+						<h3>Description:</h3>
+						<p>{page.description}</p>
+					</div>
+				</f:then>
+				<f:else>
+				</f:else>
+			</f:if>
+
+			<f:if condition="{page.abstract}">
+				<f:then>
+					<div class="mt-pageheader-content-section abstract">
+						<h3>Abstract:</h3>
+						<p>{page.abstract}</p>
+					</div>
+				</f:then>
+			</f:if>
+
+			<f:if condition="{page.keywords}">
+				<f:then>
+					<div class="mt-pageheader-content-section abstract">
+						<h3>Keywords:</h3>
+						<p>{page.keywords}</p>
+					</div>
+				</f:then>
+			</f:if>
+
+		</div>
+
+	</div>
 
 </f:if>
 

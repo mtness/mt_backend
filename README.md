@@ -4,10 +4,10 @@ Main Features:
 - overview of page properties in Page Module
 - Some QoL fixes for the backend 
 
-Did you ever had to edit lots of content pages and review their resources, 
+Did you ever had to edit lots of content pages and review their resources,\
 or just wanted to see the current slug directly?
 
-Well, I do. And it annoyed the gentle carres out of me that I always had to click on "edit page" 
+Well, I do. And it annoyed the gentle carress out of me that I always had to click on "edit page" 
 and then the corresponding tab over and over again. But no more!
 
 ![alt text](Documentation/preview.png)
@@ -42,7 +42,7 @@ and a some css touchup:
   ![alt text](Documentation/gridelements.png)
 
 
-In the hope you may find it useful,
-Feedback is always welcome please use the repository issues for that.
+In the hope you may find it useful!
+Feedback is always welcome, please use the repository issues for that.
 
 A big thank you to Markus Klein especially for helping me with so many little things I stopped counting^^)
