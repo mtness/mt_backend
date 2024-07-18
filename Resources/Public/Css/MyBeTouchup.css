@@ -9,13 +9,13 @@
 	padding: 20px 20px 5px 20px;
 }
 .t3-page-ce {
-	margin: 18px;
+	margin: 18px 18px 0;
+}
+.t3-page-ce:last-of-type {
+	margin-bottom: 12px;
 }
 .t3-page-ce .t3-page-ce-body {
 	margin-bottom: 18px;
-}
-.t3js-page-new-ce {
-	margin-bottom: 12px;
 }
 
 /* mt-pageheader */
@@ -29,29 +29,40 @@ h2.t3js-subtitle-inlineedit {
 	position: relative;
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 2px;
-	box-shadow: 0 0 1px 0 rgba(0,0,0,.33);
-	margin: 1em -1px 2em;
-	border-top: 1px solid #cdcdcd;
+	margin: .5em -1px 2em;
+	bottom: 1px solid #cdcdcd;
 }
 .mt-pageheader-content {
 	position: relative;
-	padding: 10px 20px;
+	padding: 8px 20px;
+	display: flex;
+	flex-flow: column;
+	gap: .5rem;
 }
 .mt-pageheader h3 {
-	margin-top: 0;
+	margin: 0;
 	font-size: 1em;
 	font-weight: 700;
 }
 .mt-pageheader h3 + p {
-	position: relative;
-	top: -8px;
 	margin: 0;
 }
 
-
 .mt-pageheader-content-section {
-	margin: 10px 0;
+	display: flex;
+	align-items: center;
 }
+.mt-pageheader-content-section b {
+	display: none;
+}
+.mt-pageheader-content-section h3 {
+	display: inline-block;
+	min-width: 5.5rem;
+	text-align: right;
+	padding-right: .5rem;
+	font-size: .7rem;
+}
+
 
 .mt-pageheader-content-section.resources .imgs {
 	position: relative;
@@ -77,8 +88,23 @@ h2.t3js-subtitle-inlineedit {
 	border-radius: 3px;
 }
 
+.mt-pageheader .slug {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+}
 .mt-pageheader .slug pre {
-	font-size: .95rem;
+	color: #737373;
+	flex-grow: 1;
+	padding: .1rem .2rem;
+}
+
+
+.mt-pageheader .slug pre {
+	font-size: .875rem;
 }
 
 .mt-pageheader-list-inline {
@@ -88,92 +114,8 @@ h2.t3js-subtitle-inlineedit {
 	display: inline;
 }
 
-/* save buttons in one line, again // now ext:save_close_ce */
-
-/* https://github.com/MichaelNussbaumerGOWEST/backend_save_buttons/blob/master/Resources/Public/css/backend/gowest-backend.css */
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton {
-	border: 1px solid #bbbbbb;
-
-	border-radius: 2px;
-	-o-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button.dropdown-toggle {
-	display: none;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu {
-	display: block;
-	position: relative;
-	top: auto;
-	left: auto;
-	background: none;
-	border: 0;
-	box-shadow: none;
-	-o-box-shadow: none;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-
-	padding: 0;
-	margin: 0;
-
-	min-width: 0;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li {
-	float: left;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button,
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a {
-	text-indent: -999em;
-	position: relative;
-	float: left;
-	padding: 0;
-	margin: 0;
-	width: 24px;
-	height: 24px;
-	min-height: 24px;
-	border: 0;
-
-	border-left: 1px solid #bbbbbb;
-	color: #000;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button {
-	border-left: 0;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button:hover,
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a:hover {
-	background: #d5d5d5;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button:focus,
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a:focus {
-	outline: 0;
-}
-
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton button > span.icon,
-.module-docheader.t3js-module-docheader .module-docheader-bar .module-docheader-bar-column-left .btn-group.t3js-splitbutton .dropdown-menu > li > a > span.icon {
-	text-indent: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
 
 
-	transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-
-}
-
-.dropdown-menu h3.dropdown-headline {}
-.dropdown-menu h3.dropdown-headline + hr { margin: 0.75em -15px; }
 
 /* hide clear cache explanation */
 .dropdown-table-column.dropdown-table-column-top.dropdown-table-text .text-muted { display: none; }
@@ -187,6 +129,9 @@ h2.t3js-subtitle-inlineedit {
 code {
 	color: #080;
 }
+
+
+
 
 /* better backend form styling by mtness */
 
@@ -205,6 +150,13 @@ h1 { margin-bottom: 10px; }
 
 
 .form-control-wrap { margin: 1px 0; }
+
+
+
+
+
+
+
 
 /* misc backend style touchup */
 
@@ -229,6 +181,9 @@ body .module {
 	margin-top: 0 !important;
 }
 
+div[id*="t3js-form-field-slug"] {
+	font-family: monospace;
+}
 
 
 
@@ -317,6 +272,8 @@ body .module {
 .t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > .t3-page-ce-body-inner {
 	padding-top: 0;
 }
+
+
 
 
 /* hide mask sponsor-card-container */
