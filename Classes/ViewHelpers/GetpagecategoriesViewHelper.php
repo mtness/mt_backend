@@ -38,7 +38,7 @@ class GetpagecategoriesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\Abst
 				'sys_category',
 				'sys_category_record_mm',
 				'mm',
-				$queryBuilder->expr()->andX(
+				$queryBuilder->expr()->and(
 					$queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->quoteIdentifier('sys_category.uid')),
 					$queryBuilder->expr()->in('mm.uid_foreign', $pageUid ),
 					$queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->quote('pages')),
@@ -46,7 +46,7 @@ class GetpagecategoriesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\Abst
 				)
 			);
 
-			$pageCats = $query->execute()->fetchAll();
+			$pageCats = $query->executeQuery()->fetchAllAssociative();
 
 			$result = '';
 
