@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  MarkusTimtner\MtBackend\Backend\ModifyPageLayoutContent:
+    tags:
+      - name: event.listener
+        identifier: 'mt-backend/backend/modify-page-module-content'
