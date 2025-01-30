@@ -1,5 +1,10 @@
 #mtness{}
 
+:root {
+	--typo3-text-color-code: light-dark(var(--token-color-green-60), var(--token-color-green-80));
+}
+
+
 /* filereference metadata  */
 .formengine-field-item-description {
 	display: none;
@@ -27,14 +32,15 @@ h2.t3js-subtitle-inlineedit {
 
 .mt-pageheader {
 	position: relative;
-	background-color: rgba(255,255,255,0.5);
-	border-radius: 2px;
+	/*background-color: light-dark(var(--token-color-green-60), var(--token-color-green-80));*/
+	border: 1px dotted var(--pagemodule-grid-border-color);
+	border-radius: var(--pagemodule-grid-border-radius);
+	padding: var(--pagemodule-grid-spacing);
 	margin: .5em -1px 2em;
-	bottom: 1px solid #cdcdcd;
 }
 .mt-pageheader-content {
 	position: relative;
-	padding: .2rem 1rem;
+	padding: .2rem 0;
 	display: flex;
 	flex-flow: column;
 	gap: .5rem;
@@ -94,9 +100,9 @@ h2.t3js-subtitle-inlineedit {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-
 }
 .mt-pageheader .slug pre {
+	background-color: light-dark(#fff, #000);
 	color: #737373;
 	flex-grow: 1;
 	padding: .1rem .2rem;
@@ -126,9 +132,7 @@ h2.t3js-subtitle-inlineedit {
 	background-color: rgba(0,0,0,0.75);
 }
 
-code {
-	color: #080;
-}
+
 
 
 
@@ -159,19 +163,6 @@ h1 { margin-bottom: 10px; }
 
 
 /* misc backend style touchup */
-
-body,
-body .module {
-	background-color: #eee;
-}
-
-.typo3-login {
-	background-color: #666 !important;
-}
-
-#typo3-contentContainerWrapper {
-	background-color: #666 !important;
-}
 
 .typo3-topbar-site-name {
 	font-size: 10px;
@@ -271,13 +262,4 @@ div[id*="t3js-form-field-slug"] {
 
 .t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > .t3-page-ce-body-inner {
 	padding-top: 0;
-}
-
-
-
-
-/* hide mask sponsor-card-container */
-
-.sponsor-card-container {
-	display: none;
 }
