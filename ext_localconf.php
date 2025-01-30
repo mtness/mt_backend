@@ -4,7 +4,6 @@ defined('TYPO3') || die('Access denied.');
 
 $versionInformation = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class);
 if ($versionInformation->getMajorVersion() > 12) {
-
 	$GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['mt_backend'] = 'EXT:mt_backend/Resources/Public/Css/MyBeTouchup.css';
 
 } else {
