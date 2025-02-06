@@ -1,7 +1,18 @@
 #mtness{}
 
-:root {
+body {
 	--typo3-text-color-code: light-dark(var(--token-color-green-60), var(--token-color-green-80));
+	--pagemodule-grid-spacing: .5rem;
+}
+
+/* v13 BE fixes */
+
+.t3-grid-table colgroup col {
+	width: unset !important;
+}
+
+.badge-list {
+	margin-block-end: .5rem;
 }
 
 
@@ -10,18 +21,6 @@
 	display: none;
 }
 
-.t3-page-column-header {
-	padding: 20px 20px 5px 20px;
-}
-.t3-page-ce {
-	margin: 18px 18px 0;
-}
-.t3-page-ce:last-of-type {
-	margin-bottom: 12px;
-}
-.t3-page-ce .t3-page-ce-body {
-	margin-bottom: 18px;
-}
 
 /* mt-pageheader */
 
@@ -124,14 +123,24 @@ h2.t3js-subtitle-inlineedit {
 
 
 /* hide clear cache explanation */
-.dropdown-table-column.dropdown-table-column-top.dropdown-table-text .text-muted { display: none; }
-
-/* v9 misc backend enhancements */
-
-.modal-open .modal {
-	background-color: rgba(0,0,0,0.75);
+.dropdown-table-column.dropdown-table-column-top.dropdown-table-text .text-muted,
+.dropdown-item-column-text small {
+	display: none;
 }
 
+
+/* v13 BE styling touchup */
+.t3js-page-new-ce .btn {
+	border-radius: 3rem;
+	padding: .5rem 1rem;
+}
+
+/* dark mode enhancements */
+
+.panel-heading {
+	background-color: light-dark(#f0f0f0,#1c1c1c);
+;
+}
 
 
 
