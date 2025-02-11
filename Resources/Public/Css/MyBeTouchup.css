@@ -32,8 +32,11 @@ h2.t3js-subtitle-inlineedit {
 .mt-pageheader {
 	position: relative;
 	/*background-color: light-dark(var(--token-color-green-60), var(--token-color-green-80));*/
+	border: 1px dotted #ccc;
 	border: 1px dotted var(--pagemodule-grid-border-color);
+	border-radius: .25rem;
 	border-radius: var(--pagemodule-grid-border-radius);
+	padding: .5rem;
 	padding: var(--pagemodule-grid-spacing);
 	margin: .5em -1px 2em;
 }
