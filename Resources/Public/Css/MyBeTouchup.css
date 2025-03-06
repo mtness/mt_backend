@@ -126,8 +126,8 @@ h2.t3js-subtitle-inlineedit {
 
 
 /* hide clear cache explanation */
-.dropdown-table-column.dropdown-table-column-top.dropdown-table-text .text-muted,
-.dropdown-item-column-text small {
+#typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem .text-body-secondary,
+.dropdown-table-column.dropdown-table-column-top.dropdown-table-text .text-muted {
 	display: none;
 }
 
