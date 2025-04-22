@@ -15,6 +15,17 @@ body {
 	margin-block-end: .5rem;
 }
 
+.resource-tiles {
+	--typo3-resource-tiles-grid-spacing: calc(.5rem - 1px);
+}
+.resource-tiles .resource-tile {
+	border: 0;
+}
+
+.t3-grid-table colgroup col {
+	width: unset;
+}
+
 
 /* filereference metadata  */
 .formengine-field-item-description {
@@ -275,3 +286,7 @@ div[id*="t3js-form-field-slug"] {
 .t3-ctype-identifier[data-ctype="gridelements_pi1"] + .t3-page-ce-body > .t3-page-ce-body-inner {
 	padding-top: 0;
 }
+
+
+
+
