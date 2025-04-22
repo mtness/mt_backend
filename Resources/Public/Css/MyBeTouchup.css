@@ -15,10 +15,10 @@ body {
 	margin-block-end: .5rem;
 }
 
-.resource-tiles {
-	--typo3-resource-tiles-grid-spacing: calc(.5rem - 1px);
+.resource-tiles-container .resource-tiles {
+	gap: calc(.5rem - 1px);
 }
-.resource-tiles .resource-tile {
+.resource-tiles-container .resource-tile {
 	border: 0;
 }
 
