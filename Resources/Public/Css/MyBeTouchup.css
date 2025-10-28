@@ -3,9 +3,20 @@
 body {
 	--typo3-text-color-code: light-dark(var(--token-color-green-60), var(--token-color-green-80));
 	--pagemodule-grid-spacing: .5rem;
+	--pagemodule-action-height: 2rem;
 }
 
 /* v13 BE fixes */
+.module .yoast-seo-score-bar {
+	margin: 0 .5rem .5rem;
+}
+
+.module .yoast-seo-snippet-header {
+	margin-block-end: 2rem;
+	padding: 0;
+	border: 1px dotted var(--pagemodule-grid-border-color);
+	border-radius: var(--pagemodule-grid-border-radius);
+}
 
 .t3-grid-table colgroup col {
 	width: unset !important;
@@ -26,6 +37,9 @@ body {
 	width: unset;
 }
 
+.t3-page-ce-actions {
+	height: unset;
+}
 
 /* filereference metadata  */
 .formengine-field-item-description {
@@ -144,6 +158,13 @@ h2.t3js-subtitle-inlineedit {
 
 
 /* v13 BE styling touchup */
+.t3-page-ce-actions {
+	margin: 0 0 1rem;
+}
+* + .t3-page-ce-actions {
+	margin: 1rem 0;
+}
+
 .t3js-page-new-ce .btn {
 	border-radius: 3rem;
 	padding: .5rem 1rem;
@@ -201,12 +222,21 @@ div[id*="t3js-form-field-slug"] {
 
 
 
+
+
 /* reset of order of module docheader */
 .module-docheader-bar-navigation .module-docheader-bar-column-left .row-cols-auto.row {
 	flex-flow: row-reverse;
 	justify-content: left;
 }
 
+/* hide langauge button text */
+.module-docheader button[title="Language"] {
+	font-size: 0;
+}
+.module-docheader button[title="Language"]:after {
+	margin-left: .25rem;
+}
 
 
 
