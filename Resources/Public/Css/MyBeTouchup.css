@@ -170,6 +170,17 @@ h2.t3js-subtitle-inlineedit {
 	padding: .5rem 1rem;
 }
 
+/* syncronize CE-rows in language view  */
+
+.t3-page-columns .t3-page-column + .t3-page-column .t3-page-ce {
+	margin-block: 4rem;
+}
+
+
+
+
+
+
 /* dark mode enhancements */
 
 .panel-heading {
@@ -230,13 +241,27 @@ div[id*="t3js-form-field-slug"] {
 	justify-content: left;
 }
 
-/* hide langauge button text */
-.module-docheader button[title="Language"] {
-	font-size: 0;
+@media screen and (max-width: 30rem) {
+	/* hide langauge button text */
+	.module-docheader button[title="Language"] {
+		font-size: 0;
+	}
+
+	.module-docheader button[title="Language"]:after {
+		margin-left: .25rem;
+	}
 }
-.module-docheader button[title="Language"]:after {
-	margin-left: .25rem;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
