@@ -172,11 +172,17 @@ h2.t3js-subtitle-inlineedit {
 
 /* syncronize CE-rows in language view  */
 
-.t3-page-columns .t3-page-column + .t3-page-column .t3-page-ce {
-	margin-block: 4rem;
+.t3-page-columns:has( .t3-page-column-lang-name) .t3-page-column + .t3-page-column .t3-page-ce {
+	margin-block: 4.25rem;
 }
 
-
+.element-preview-content > :first-child {
+	max-height: 6rem;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 
 
 
@@ -306,7 +312,6 @@ div[id*="t3js-form-field-slug"] {
 
 .t3js-module-body .t3-grid-container-5 {
 	border-style: solid;
-	border-color: #fafa0f;
 	margin: 2px 0 0 0;
 }
 
