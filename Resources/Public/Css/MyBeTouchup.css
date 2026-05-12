@@ -171,7 +171,6 @@ h2.t3js-subtitle-inlineedit {
 }
 
 /* syncronize CE-rows in language view  */
-
 .t3-page-columns:has( .t3-page-column-lang-name) .t3-page-column + .t3-page-column .t3-page-ce {
 	margin-block: 4.25rem;
 }
