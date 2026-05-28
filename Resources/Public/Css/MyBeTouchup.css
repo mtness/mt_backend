@@ -182,7 +182,9 @@ h2.t3js-subtitle-inlineedit {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-
+.element-preview-content:has( .t3-grid-container) > :first-child {
+	max-height: unset;
+}
 
 
 
