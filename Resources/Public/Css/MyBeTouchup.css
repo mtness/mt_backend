@@ -175,17 +175,13 @@ h2.t3js-subtitle-inlineedit {
 	margin-block: 4.25rem;
 }
 
-.element-preview-content > :first-child {
+.element-preview-content > a:first-child {
 	max-height: 6rem;
 	display: block;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.element-preview-content:has( .t3-grid-container) > :first-child {
-	max-height: unset;
-}
-
 
 
 /* dark mode enhancements */
