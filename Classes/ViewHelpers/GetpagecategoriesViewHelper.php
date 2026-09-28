@@ -1,9 +1,10 @@
 <?php
+
 namespace MarkusTimtner\MtBackend\ViewHelpers;
+
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * 2024-07-18 by Markus Timtner
@@ -16,29 +17,33 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  *
  */
 
-class GetpagecategoriesViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
+class GetpagecategoriesViewHelper extends AbstractViewHelper {
 
-	public function initializeArguments()
+	/**
+	 * The rendered list markup must not be escaped.
+	 *
+	 * @var bool
+	 */
+	protected $escapeOutput = false;
+
+	public function initializeArguments(): void
 	{
 		parent::initializeArguments();
 		$this->registerArgument('uid', 'int', 'the page uid');
 	}
 
-	public static function renderStatic(
-		array $arguments,
-		\Closure $renderChildrenClosure,
-		RenderingContextInterface $renderingContext
-	): string {
+	public function render(): string
+	{
 
-		$pageUid = (int)$arguments['uid'];
+		$pageUid = (int)$this->arguments['uid'];
 
-			$queryBuilder = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable('sys_category');
+			$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('sys_category');
 			$query = $queryBuilder->select('sys_category.uid', 'sys_category.title')->from('sys_category');
 			$query->join(
 				'sys_category',
 				'sys_category_record_mm',
 				'mm',
-				$queryBuilder->expr()->and(
+				(string)$queryBuilder->expr()->and(
 					$queryBuilder->expr()->eq('mm.uid_local', $queryBuilder->quoteIdentifier('sys_category.uid')),
 					$queryBuilder->expr()->in('mm.uid_foreign', $pageUid ),
 					$queryBuilder->expr()->eq('mm.tablenames', $queryBuilder->quote('pages')),

@@ -4,20 +4,27 @@ declare(strict_types=1);
 
 namespace MarkusTimtner\MtBackend\Hooks;
 
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 use TYPO3\CMS\Backend\Controller\PageLayoutController;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\View\ViewFactoryData;
+use TYPO3\CMS\Core\View\ViewFactoryInterface;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
 class PageHook
 {
 	public function __invoke(ModifyPageLayoutContentEvent $event): void
 	{
-		$event->addHeaderContent($this->renderStuff((int)($event->getRequest()->getQueryParams()['id'] ?? 0)));
+		$event->addHeaderContent($this->renderStuff(
+			(int)($event->getRequest()->getQueryParams()['id'] ?? 0),
+			$event->getRequest()
+		));
 	}
 
 	public function render(array $params, PageLayoutController $parentObject)
@@ -25,16 +32,12 @@ class PageHook
 		return $this->renderStuff((int)$parentObject->pageinfo['uid']);
 	}
 
-	protected function renderStuff(int $id)
+	protected function renderStuff(int $id, ?ServerRequestInterface $request = null): string
 	{
 
 		$pageinfo = BackendUtility::readPageAccess($id, $GLOBALS['BE_USER']->getPagePermsClause(Permission::PAGE_SHOW));
 
-		//load partial paths info from typoscript
-		$view = GeneralUtility::makeInstance(StandaloneView::class);
-		$view->setFormat('html');
-		$resourcesPath = 'EXT:mt_backend/Resources/';
-		$view->setTemplatePathAndFilename($resourcesPath . 'Private/Templates/PageHook.html');
+		$view = $this->createView($request);
 
 		if ($pageinfo['media']) {
 			$fileRepository = GeneralUtility::makeInstance(FileRepository::class);
@@ -63,5 +66,26 @@ class PageHook
 		$view->assign('page', $pageinfo);
 		return $view->render();
 	}
-}
 
+	/**
+	 * TYPO3 v14 removed \TYPO3\CMS\Fluid\View\StandaloneView, so from v14 on the
+	 * generic ViewFactoryInterface must be used instead. Earlier versions keep
+	 * using StandaloneView, as the view factory only exists since TYPO3 v13.3.
+	 */
+	protected function createView(?ServerRequestInterface $request): object
+	{
+		if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() >= 14) {
+			$viewFactory = GeneralUtility::makeInstance(ViewFactoryInterface::class);
+			return $viewFactory->create(new ViewFactoryData(
+				templatePathAndFilename: 'EXT:mt_backend/Resources/Private/Templates/PageHook.html',
+				request: $request,
+				format: 'html'
+			));
+		}
+
+		$view = GeneralUtility::makeInstance(StandaloneView::class);
+		$view->setFormat('html');
+		$view->setTemplatePathAndFilename('EXT:mt_backend/Resources/Private/Templates/PageHook.html');
+		return $view;
+	}
+}
