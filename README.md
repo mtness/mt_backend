@@ -42,6 +42,15 @@ and a some css touchup:
   ![alt text](Documentation/gridelements.png)
 
 
+Site Set (TYPO3 13+):\
+The extension ships a Site Set `markustimtner/mt-backend` (`Configuration/Sets/MtBackend`).
+Add it as a dependency in your site configuration or in your own site set:
+
+```yaml
+dependencies:
+  - markustimtner/mt-backend
+```
+
 In the hope you may find it useful!
 Feedback is always welcome, please use the repository issues for that.
 
