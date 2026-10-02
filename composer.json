@@ -22,7 +22,7 @@
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "mt_backend",
-			"version": "14.0.5",
+			"version": "14.0.6",
 			"Package": {
 				"providesPackages": {}
 			}
