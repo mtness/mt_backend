@@ -12,7 +12,7 @@
 		"GPL-2.0-or-later"
 	],
 	"require": {
-		"typo3/cms-backend": "^13 || ^14"
+		"typo3/cms-core": "^13 || ^14"
 	},
 	"autoload": {
 		"psr-4": {
@@ -22,7 +22,7 @@
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "mt_backend",
-			"version": "14.0.7",
+			"version": "14.0.8",
 			"Package": {
 				"providesPackages": {}
 			}
