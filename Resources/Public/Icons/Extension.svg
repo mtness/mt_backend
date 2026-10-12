@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .a{fill:#5f7a93}.t{fill:#a3b0bd}
+    @media(prefers-color-scheme:dark){.a{fill:#8ea6bd}.t{fill:#667585}}
+  </style>
+  <circle class="t" cx="32" cy="32" r="28"/>
+  <path class="a" d="M32 4A28 28 0 0 1 32 60A14 14 0 0 1 32 32A14 14 0 0 0 32 4z"/>
+</svg>
