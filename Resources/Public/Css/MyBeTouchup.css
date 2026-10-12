@@ -27,7 +27,17 @@ body {
 }
 
 .resource-tiles-container .resource-tiles {
-	gap: calc(.5rem - 1px);
+	--auto-grid-min-size: 10rem;
+	--auto-grid-gap-vertical: .5rem;
+	--auto-grid-gap: .5rem;
+	--max-column-width: 100% / 5- var(--auto-grid-gap, 1rem);
+	--column-width: max(
+		var(--max-column-width),
+		min(var(--auto-grid-min-size, 10rem), 100%)
+	);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
+	gap: var(--auto-grid-gap-vertical, var(--auto-grid-gap, 1rem)) var(--auto-grid-gap, 1rem);
 }
 @container (min-width: 480px) {
   .resource-tiles {
