@@ -30,7 +30,7 @@ body {
 	--auto-grid-min-size: 10rem;
 	--auto-grid-gap-vertical: .5rem;
 	--auto-grid-gap: .5rem;
-	--max-column-width: 100% / 5- var(--auto-grid-gap, 1rem);
+	--max-column-width: 100% / 5 - var(--auto-grid-gap, 1rem);
 	--column-width: max(
 		var(--max-column-width),
 		min(var(--auto-grid-min-size, 10rem), 100%)
