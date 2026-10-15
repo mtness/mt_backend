@@ -35,9 +35,16 @@ body {
 		var(--max-column-width),
 		min(var(--auto-grid-min-size, 10rem), 100%)
 	);
+	--single-max-w: 12rem;  /* your desired max width */
+	--single-max-h: 12rem;  /* your desired max height (optional) */
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(var(--column-width), 1fr));
 	gap: var(--auto-grid-gap-vertical, var(--auto-grid-gap, 1rem)) var(--auto-grid-gap, 1rem);
+}
+.resource-tiles-container .resource-tiles:has(> :only-child) {
+  grid-template-columns: minmax(var(--auto-grid-min-size, 10rem), var(--single-max-w));
+  grid-auto-rows: minmax(0, var(--single-max-h)); /* limits track height if you want a fixed visual box */
+  justify-content: center; /* centers the constrained column */
 }
 @container (min-width: 480px) {
   .resource-tiles {
