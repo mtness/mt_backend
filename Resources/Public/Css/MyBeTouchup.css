@@ -6,7 +6,7 @@ body {
 	--pagemodule-action-height: 2rem;
 }
 
-/* v13 BE fixes */
+/* v13+ BE fixes */
 .module .yoast-seo-score-bar {
 	margin: 0 .5rem .5rem;
 }
@@ -16,6 +16,10 @@ body {
 	padding: 0;
 	border: 1px dotted var(--pagemodule-grid-border-color);
 	border-radius: var(--pagemodule-grid-border-radius);
+}
+
+div[id^="formengine-table-permission"] .form-check-label {
+	opacity: .25;
 }
 
 .t3-grid-table colgroup col {
